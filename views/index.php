@@ -74,35 +74,28 @@
   </div>
     <hr>
 
+      <hr>
+<h2 class="text-center">История предсказаний</h2><br>
   <table class="table"  >
-    <thead>
+    <thead class="thead-dark">
       <tr>
-        <th scope="col"><?= $extras_1->extrasense_name;?></th>
-        <th scope="col">Правильный ответ</th>
-        <th scope="col"><?= $extras_2->extrasense_name;?></th>
+        <th class="col-md-4 col-sm-3 col-xs-6 text-center" ><h5><?= $extras_1->extrasense_name;?></h5></th>
+        <th class="col-md-4 col-sm-3 col-xs-6 text-center"><h4>Правильный ответ</h4></th>
+        <th class="col-md-4 col-sm-3 col-xs-6 text-center"><h5><?= $extras_2->extrasense_name;?></h5></th>
       </tr>
     </thead>
 
     <tbody>
       <?php for($i = 0; $i < count($all_extr1) - 1; $i++): ?>
       <tr>
-        <td><?= $all_extr1[$i];?></td>
-        <th><?= $user_nums[$i];?></th>
-        <td><?= $all_extr2[$i];?></td>
+        <td class='<?= $all_extr1[$i] == $user_nums[$i]?'table-success':'table-warning';?> text-center'><?= $all_extr1[$i];?></td>
+        <th class='<?= $all_extr1[$i] == $user_nums[$i] || $all_extr2[$i] == $user_nums[$i]?'table-success':'table-warning';?> text-center'><?= $user_nums[$i];?></th>
+        <td class='<?= $all_extr2[$i] == $user_nums[$i]?'table-success':'table-warning';?> text-center'><?= $all_extr2[$i];?></td>
       </tr>
       <?php endfor;?>
     </tbody>
   </table>
 <br>
-<script type="text/javascript"> function newPredict() { $.ajax({
-           type: "POST",
-           url: 'controllers/ExtrasenseController.php',
-           data:{action:'new_predict'},
-           success:function(html) {
-             window.location.href = "";
-           }
-
-      }); } </script>
  </div>
 </body>
 </html>
