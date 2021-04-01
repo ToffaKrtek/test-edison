@@ -8,7 +8,6 @@
 
     function __construct($name) {
       $this->extrasense_name = $name;
-      array_push($all_extrasenses, $name);
       if (!isset($_SESSION[$this->extrasense_name])){
       $_SESSION[$this->extrasense_name]['predicts'] = array();
       $_SESSION[$this->extrasense_name]['results'] = array();

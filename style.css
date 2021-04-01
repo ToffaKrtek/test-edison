@@ -1,0 +1,7 @@
+.img-mag {
+  max-width: 170px;
+  height: auto;
+  border: 2px solid;
+  border-radius: 50%;
+  border-color: black;
+}
