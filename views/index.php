@@ -55,11 +55,11 @@
     <div class="col" align="center">
       <p><?=$extras_1->extrasense_name;?> предрекает число</p>
         <h2><?= $predict;?></h2>
-        <button class="btn btn-success" type="success" name="success"><?=$extras_2->extrasense_name;?> угадал</button>
+        <button class="btn btn-success" type="success" name="success" onclick="extraRight(<?= $predict;?>)"><?=$extras_2->extrasense_name;?> угадал</button>
     </div>
     <div class="col" align="center">
       <form method="post">
-        <input type="number" name="user_number" min="10" max="99" style="margin: 8px"><br>
+        <input type="number" id="user_number" name="user_number" min="10" max="99" style="margin: 8px; font-size: 44px;" class="form-control form-control-lg text-center"><br>
       <button class="btn btn-primary" type="submit" name="submit">Отправить</button>
     </form>
     </div>
@@ -67,7 +67,7 @@
   <div class="col" align="center">
     <p><?=$extras_2->extrasense_name;?> предрекает число</p>
       <h2><?= $predict2;?></h2>
-      <button class="btn btn-success" type="success" name="success"><?=$extras_1->extrasense_name;?> угадал</button>
+      <button class="btn btn-success" type="success" name="success" onclick="extraRight(<?= $predict2;?>)"><?=$extras_1->extrasense_name;?> угадал</button>
   </div>
 </div>
 </div>
@@ -97,5 +97,10 @@
   </table>
 <br>
  </div>
+ <script type="text/javascript">
+ function extraRight(num){
+   $('#user_number').val(num);
+ }
+ </script>
 </body>
 </html>
