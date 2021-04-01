@@ -22,9 +22,19 @@
           <div class="col" align="center">
               <h3 ><?=$extras_1->extrasense_name;?></h3>
             <img src="merlin1.png" alt="Фотография" class="img-mag">
-              <h5><?=$extras_1->rate;?></h5>
+              <p>
+                  <span><b>Рейтинг угадательности</b></span>  <br>
+              <h5><?=$rate1;?></h5>
+              </p>
           </div>
           <div class="col align-self-center" align="center">
+            <p>
+              <h3>Загадайте двузначное число</h3>
+              <br>
+              <span>А наши предсказатели попробуют его отгадать</span>  <hr>
+                <small>Представьте его. Прокрутите в голове обе цифры.<br> Пусть в сознании останятся только они. </small><hr>
+                <h5>Кликните, как только будете готовы</h5>
+            </p>
     <button class="btn btn-primary " type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
         Загадать число
       </button>
@@ -33,7 +43,10 @@
           <div class="col" align="center">
             <h3><?=$extras_2->extrasense_name;?></h3>
             <img src="dambldore1.jpg" alt="" class="img-mag">
-              <h5><?=$extras_2->rate;?></h5>
+            <p>
+                <span><b>Рейтинг угадательности</b></span>  <br>
+              <h5><?=$rate2;?></h5>
+              </p>
           </div>
         </div>
       <div class="collapse" id="collapseExample">
@@ -42,6 +55,7 @@
     <div class="col" align="center">
       <p><?=$extras_1->extrasense_name;?> предрекает число</p>
         <h2><?= $predict;?></h2>
+        <button class="btn btn-success" type="success" name="success"><?=$extras_2->extrasense_name;?> угадал</button>
     </div>
     <div class="col" align="center">
       <form method="post">
@@ -53,6 +67,7 @@
   <div class="col" align="center">
     <p><?=$extras_2->extrasense_name;?> предрекает число</p>
       <h2><?= $predict2;?></h2>
+      <button class="btn btn-success" type="success" name="success"><?=$extras_1->extrasense_name;?> угадал</button>
   </div>
 </div>
 </div>
@@ -69,10 +84,10 @@
     </thead>
 
     <tbody>
-      <?php for($i = 0; $i < count($all_extr1); $i++): ?>
+      <?php for($i = 0; $i < count($all_extr1) - 1; $i++): ?>
       <tr>
         <td><?= $all_extr1[$i];?></td>
-        <th><?= $i;?></th>
+        <th><?= $user_nums[$i];?></th>
         <td><?= $all_extr2[$i];?></td>
       </tr>
       <?php endfor;?>
