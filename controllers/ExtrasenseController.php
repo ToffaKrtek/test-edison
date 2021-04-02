@@ -7,8 +7,8 @@ class ExtrasenseController
   public function actionIndex()
   {
     $user = new User;
-    $extras_1 = new Extrasense('Merlin');
-    $extras_2 = new Extrasense('Dumbldor');
+    $extras_1 = new Extrasense('Мерлин');
+    $extras_2 = new Extrasense('Дамблдор');
 
     if(isset($_POST['submit']))
     {
@@ -20,12 +20,18 @@ class ExtrasenseController
     }
     $user_nums = $user->getAllNums();
 
+
+
     $rate1 = $extras_1->getRate();
     $rate2 = $extras_2->getRate();
     $predict = $extras_1->getPredict();
     $predict2 = $extras_2->getPredict();
     $all_extr1 = $extras_1->getAllPredicts();
     $all_extr2 = $extras_2->getAllPredicts();
+    while (count($user_nums) < (count($all_extr1) - 1)):
+        $user->addNum(0);
+        $user_nums = $user->getAllNums();
+    endwhile;
     require_once(ROOT.'/views/index.php');
   }
 

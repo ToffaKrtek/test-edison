@@ -24,7 +24,7 @@
             <img src="merlin1.png" alt="Фотография" class="img-mag">
               <p>
                   <span><b>Рейтинг угадательности</b></span>  <br>
-              <h5><?=$rate1;?></h5>
+              <h5><?=$rate1;?>%</h5>
               </p>
           </div>
           <div class="col align-self-center" align="center">
@@ -32,7 +32,7 @@
               <h3>Загадайте двузначное число</h3>
               <br>
               <span>А наши предсказатели попробуют его отгадать</span>  <hr>
-                <small>Представьте его. Прокрутите в голове обе цифры.<br> Пусть в сознании останятся только они. </small><hr>
+                <small>Представьте его. Прокрутите в голове обе цифры.<br> Пусть в сознании останутся только они. </small><hr>
                 <h5>Кликните, как только будете готовы</h5>
             </p>
     <button class="btn btn-primary " type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
@@ -45,7 +45,7 @@
             <img src="dambldore1.jpg" alt="" class="img-mag">
             <p>
                 <span><b>Рейтинг угадательности</b></span>  <br>
-              <h5><?=$rate2;?></h5>
+              <h5><?=$rate2;?>%</h5>
               </p>
           </div>
         </div>
@@ -55,11 +55,11 @@
     <div class="col" align="center">
       <p><?=$extras_1->extrasense_name;?> предрекает число</p>
         <h2><?= $predict;?></h2>
-        <button class="btn btn-success" type="success" name="success" onclick="extraRight(<?= $predict;?>)"><?=$extras_2->extrasense_name;?> угадал</button>
+        <button class="btn btn-success" type="success" name="success" onclick="extraRight(<?= $predict;?>)"><?=$extras_1->extrasense_name;?> угадал</button>
     </div>
     <div class="col" align="center">
       <form method="post">
-        <input type="number" id="user_number" name="user_number" min="10" max="99" style="margin: 8px; font-size: 44px;" class="form-control form-control-lg text-center"><br>
+        <input type="number" id="user_number" name="user_number" min="10" max="99" value="0" style="margin: 8px; font-size: 44px;" class="form-control form-control-lg text-center"><br>
       <button class="btn btn-primary" type="submit" name="submit">Отправить</button>
     </form>
     </div>
@@ -67,7 +67,7 @@
   <div class="col" align="center">
     <p><?=$extras_2->extrasense_name;?> предрекает число</p>
       <h2><?= $predict2;?></h2>
-      <button class="btn btn-success" type="success" name="success" onclick="extraRight(<?= $predict2;?>)"><?=$extras_1->extrasense_name;?> угадал</button>
+      <button class="btn btn-success" type="success" name="success" onclick="extraRight(<?= $predict2;?>)"><?=$extras_2->extrasense_name;?> угадал</button>
   </div>
 </div>
 </div>
